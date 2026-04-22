@@ -1,0 +1,15 @@
+keras
+keras-cv
+keras-hub
+jax[cuda13]
+matplotlib
+numpy
+pandas
+scikit-learn
+tqdm
+ipykernel
+ipywidgets
+quilt3[pyarrow]
+seaborn
+plotly
+nbformat
