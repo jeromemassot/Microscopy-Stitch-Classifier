@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microscopy Tile Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🔬 Tile Viewer</h2>
+            </div>
+            <div class="filters">
+                <h3>Filters</h3>
+                <div id="filter-container">
+                    <!-- Filters will be generated dynamically -->
+                </div>
+            </div>
+            <div class="stats">
+                <span id="image-count">0</span> images found
+            </div>
+        </aside>
+        
+        <main class="gallery">
+            <header class="gallery-header">
+                <input type="text" id="search-input" placeholder="Search files or paths..." class="search-bar">
+                <div class="view-toggles">
+                    <button class="active" style="background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer;">Grid</button>
+                </div>
+            </header>
+            
+            <div class="tab-container" id="tab-container">
+                <div class="image-grid" id="image-grid">
+                    <!-- Images will be inserted here -->
+                    <div class="loading">Loading tiles...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Full view" class="lightbox-img">
+            <div class="lightbox-info" id="lightbox-info"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
