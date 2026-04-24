@@ -7,6 +7,9 @@
 ![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=flat&logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=flat&logo=numpy&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 
 ![Summary](docs/summary.png)
 
@@ -28,8 +31,11 @@ Microscopic imaging often involves stitching multiple tiles together to form a l
 
 ```text
 Microscopy_Stitch_Classifier/
+├── app/                # Web application for tile visualization
+│   ├── public/         # Frontend assets (HTML, CSS, JS)
+│   └── server.js       # Node.js backend
 ├── data/               # Raw microscopy data (fetched from S3)
-├── datasets/           # Processed datasets (if any)
+├── datasets/           # Processed datasets and CSV labels
 ├── models/             # Saved Keras models (.keras)
 ├── notebooks/          # Experimentation and training logic
 │   └── Images_Misalignment_Classifier.ipynb
@@ -84,6 +90,38 @@ graph LR
 
 ---
 
+## 🖼️ Tile Viewer Application
+
+![Data Viewer Application Screenshot](docs/data_viewer_app.png)
+
+This repository includes a web-based **Microscopy Tile Viewer** designed to browse, filter, and cross-reference the generated image tiles. The application provides a visual interface for quality control and dataset analysis.
+
+### Features
+- **Dataset Splitting**: View tiles in side-by-side tabs organized by category (Train, Validation, Test).
+- **Dynamic Filtering**: Filter images by instrument (e.g., Z1, exaSPIM, smartSPIM), classification labels (Good/Bad), and dataset.
+- **Cross-Referencing**: Click on a tile to highlight and automatically scroll to the same image in other dataset categories, helping track duplicates or leakage.
+- **Visual Tags**: Instant visual cues for image quality and instrument origin.
+- **Lightbox Inspection**: Full-screen image inspection with metadata overlay.
+
+### Getting Started
+To run the tile viewer locally:
+
+1. Navigate to the application directory:
+   ```bash
+   cd app
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the server:
+   ```bash
+   npm start
+   ```
+4. Open your browser at `http://localhost:3000`.
+
+---
+
 ## 📈 Performance & Analysis
 
 The model's performance was evaluated during both stages of the fine-tuning process. The following visualizations demonstrate the convergence and the quality of the learned representations.
@@ -121,14 +159,6 @@ pip install -r requirements.txt
 - `jax[cuda13]` (for high-performance GPU execution)
 - `quilt3` (data versioning and retrieval)
 - `Pillow`, `matplotlib`, `pandas`, `scikit-learn`
-
----
-
-## 📊 Results & Models
-
-The trained models are stored in the `models/` directory:
-- `image_misalignment_binary_model_enb3.keras`: Model after initial head training.
-- `image_misalignment_full_model_enb3.keras`: Final model after full fine-tuning.
 
 ---
 
