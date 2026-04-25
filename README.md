@@ -90,6 +90,14 @@ graph LR
 
 ---
 
+## 📊 Dataset Composition
+
+The final dataset used for training and evaluation is composed of thousands of tiles extracted from various microscopy instruments. The distribution across the Training, Validation, and Test sets is carefully monitored to ensure a balanced representation of "Good" (aligned) and "Bad" (misaligned) examples across different color channels.
+
+![Dataset Distribution](docs/datasets_count.png)
+
+---
+
 ## 🖼️ Tile Viewer Application
 
 ![Data Viewer Application Screenshot](docs/data_viewer_app.png)
