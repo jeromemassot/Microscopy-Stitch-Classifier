@@ -1,4 +1,4 @@
-# Microscopy Stitch Classifier: Image Misalignment Detection
+# Microscopy Stitch: Image Misalignment Detection
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54)
 ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=flat&logo=Keras&logoColor=white)
@@ -98,7 +98,7 @@ This repository includes a web-based **Microscopy Tile Viewer** designed to brow
 
 ### Features
 - **Dataset Splitting**: View tiles in side-by-side tabs organized by category (Train, Validation, Test).
-- **Dynamic Filtering**: Filter images by instrument (e.g., Z1, exaSPIM, smartSPIM), classification labels (Good/Bad), and dataset.
+- **Dynamic Filtering**: Filter images by instrument (Z1, exaSPIM, smartSPIM), classification labels (Good/Bad), and dataset.
 - **Cross-Referencing**: Click on a tile to highlight and automatically scroll to the same image in other dataset categories, helping track duplicates or leakage.
 - **Visual Tags**: Instant visual cues for image quality and instrument origin.
 - **Lightbox Inspection**: Full-screen image inspection with metadata overlay.
